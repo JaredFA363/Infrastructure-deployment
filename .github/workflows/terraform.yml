@@ -27,6 +27,7 @@ jobs:
           tf_actions_subcommand: "init"
           tf_actions_working_dir: "."
           tf_actions_comment: true
+          args: '-var="instance_type=t2.micro"'
 
       - name: Terraform Plan
         uses: hashicorp/setup-terraform@v2 # JavaScript action that sets up Terraform CLI in your GitHub Actions workflow
@@ -35,6 +36,7 @@ jobs:
           tf_actions_subcommand: "plan"
           tf_actions_working_dir: "."
           tf_actions_comment: true
+          args: '-var="instance_type=t2.micro"'
 
       - name: Terraform Apply
         uses: hashicorp/setup-terraform@v2 # JavaScript action that sets up Terraform CLI in your GitHub Actions workflow
@@ -43,3 +45,4 @@ jobs:
           tf_actions_subcommand: "apply"
           tf_actions_working_dir: "."
           tf_actions_comment: true
+          args: '-auto-approve -var="instance_type=t2.micro"'
